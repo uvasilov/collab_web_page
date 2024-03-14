@@ -1,0 +1,137 @@
+/* Сброс стилей и базовая стилизация */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Бургер-меню для мобильных устройств */
+.burger-menu {
+    display: none; /* Скрыто по умолчанию */
+}
+
+/* Основной контент */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px); /* Треть ширины с учетом отступов */
+}
+
+/* Боковая панель с фильтрами */
+.sidebar {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-right: 20px;
+    flex: 0 0 250px; /* Фиксированная ширина */
+}
+
+/* Подвал */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-links {
+    list-style: none;
+    padding: 0;
+}
+
+footer .social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer .social-links li:last-child {
+    margin-right: 0;
+}
+
+footer .social-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none; /* Скрыть боковую панель на мобильных устройствах */
+    }
+
+    .products .product {
+        width: 100%; /* Блоки товаров на всю ширину на мобильных устройствах */
+    }
+
+    .burger-menu {
+        display: block; /* Показать бургер-меню на мобильных устройствах */
+    }
+}
